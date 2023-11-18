@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>96. Export</title>
+        <!-- berikan type = module -->
+        <!-- kalo import ga perlu pake ini -->
+        <!-- <script type="module" src="./scripts/hello.js"></script> -->
+    </head>
+    <body>
+        <script type = "module">
+            // jika memanggil langsung fungsi dalam hello.js akan memberikan error, maka dari itu perlu melakukan export
+            //  export merupakan kata kunci yang digunakan untuk mengekpos kode dari sebuah module
+            // export bisa ditambahkan diawal sebuah variabel, function/class
+
+            // untuk mengakses kode yang telah diekspor bisa menggunakan import
+            // saat menggunakan import, tidak perlu lagi menggunakan script src
+            import {sayHello} from "./scripts/hello.js"
+            sayHello()
+
+        </script>
+    </body>
+</html>
