@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>90. Encode</title>
+    </head>
+    <body>
+        <script>
+            // Saat menulis url, kadang kita ingin menambahkan informasi tambahan seperti query parameter
+            // URL sendiri sudah memiliki standar encoding penulisan URL
+            // Standar encoding ini dilakukan agar penulisan URL aman ketika diterima oleh server
+            // Aman disini berarti informasi URL tidak berubah
+            // contoh, misal walaupun kita mengirim spasi dalam URL tapi disarankan untuk diencode agar nilai spasi tidak benar benar terlihat seperti spasi pada URL
+
+            // Misal ada query parameter dengan nama data,misal &nilai = nilai &, urlnya akan jadi
+            // http://contoh.com?data&nilai=nilai&
+            // url diatas terlihat tidak ada masalah, tapi sebenarnya ketika diterima oleh server, parameter data bernilai tangga karena & dianggap sebagai pemisah antar parameter
+            // Artinya tanda semacam itu perlu diencode agar tidak terjadi kesalaahan data yang kita kirim
+
+            // beberapa fungsi encode bisa dilihat di /img/encode function
+            {
+            let url = "http://www.contoh.com?name=Bosse Satu Dua"
+            console.log(url)
+
+            let encoded = encodeURI(url)
+            console.log(encoded)
+
+            let decode = decodeURI(encoded)
+            console.log(decode)}
+
+            {
+                // EncodeURIComponent adalah fungsi yang sama seperti encodeURI, namun fungsi ini mengencode karakter unicode
+
+                let value = "Nama&Saya=Guwe"
+                let url = "http://www.google.com/?name="
+
+                let encoded = encodeURIComponent(value)
+                console.log(url+encoded)
+            }
+        </script>
+    </body>
+</html>
