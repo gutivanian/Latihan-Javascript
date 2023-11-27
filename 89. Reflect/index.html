@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>89. Reflect</title>
+    </head>
+    <body>
+        <script>
+            // Reflect merupakan class yang digunakan untuk mengeksekusi fungsi javascript
+            // reflect tidak memiliki constructor dan cara penggunaan reflect tidak dengan membuat objek dengan new Reflect
+            // Penggunaan reflect adalah dengan menggunakan banyak sekali static methodnya
+
+            let person = {
+                
+            }
+            Reflect.set(person, 'name', 'John')
+            document.writeln(person.name)
+            Reflect.set(person, 'age', 30)
+            document.writeln(person.age)
+
+            document.writeln(Reflect.has(person,"name"))
+            document.writeln(Reflect.has(person,"documentation"))
+        </script>
+    </body>
+</html>
