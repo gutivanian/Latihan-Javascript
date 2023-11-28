@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>88. Proxy</title>
+    </head>
+    <body>
+        <script>
+            // proxy adalah fitur yang digunakan sebagai wakil sebuah data
+            // dengan menggunakan proxy, semua interaksi ke data akan selalu melalui proxy tersebut
+
+            // pembuatan proxy perlu menggunakan handler, dimana dalam handler, kita bisa membuat  function yang dinamakan interceptor yang digunakan ketika mengambil data atau mengubah data ke target
+            // untuk membuat proxy bisa gunakan new Proxy(target,handler)
+
+            {const target = {}
+
+            let handler = {
+                get: function(target, property){
+                    return target[property]
+                },
+                set: function(target, property, value){
+                    target[property] = value
+                }
+            }
+
+
+            let proxy = new Proxy(target,handler);
+            proxy.name = 'John';
+            proxy.age = 30;
+            console.log(proxy.name);
+            console.log(proxy.age);
+            console.log(target)
+        }
+            // Saat kita mengubah data proxy, secara otomatis data akan dikirim ke target melalui handler dengan memanggil function set
+            // saat memanggil data proxy, secara otomatis data akan diambil dari target melalui handler dengan emanggil function get
+            // artinya handler berguna sebagai perantara untuk melakukan sesuatu sebelum dan setelah
+
+        {
+            const target = {}
+
+            let handler = {
+                get: function(target, property){
+                    console.log(`You are trying to access the property ${property}`)
+                    return target[property]
+                },
+                set: function(target, property, value){
+                    console.log(`You are trying to set ${property} : ${value}`)
+                    target[property] = value
+                }
+            }
+
+            let proxy = new Proxy(target,handler);
+            proxy.name = 'John';
+            proxy.age = 30;
+            console.log(proxy.name);
+            console.log(proxy.age);
+            console.log(target)
+        }
+
+        </script>
+    </body>
+</html>
