@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>87. RegExp</title>
+    </head>
+    <body>
+        <script>
+            // RegExp adalah implementasi dari regular expression di javascript
+            // merupakan fitur untuk mencari teks dengan pola
+            // membuat regular expression bisa menggunakan literal notation/object RegExp
+
+            // literal regular expression
+            let regex1 = /[a]/
+            let regex2 = new RegExp("[a]")
+            let regex3 = new RegExp(/[a]/)
+            
+
+            // gunakan exec(value):result untuk eksekusi regex 
+
+            let value = "Hello World"
+            let regex4 = /Hello/
+            let result = regex1.exec(value)
+            let result2 = regex4.exec(value)
+            document.writeln(result)
+            document.writeln(result2)
+
+            // gunakan test(value): untuk eksekusi regex untuk mengecek kesesuaian pola
+
+            let value2 = "Hello World"
+            let regex5 = /Hello/
+            let result3 = regex5.test(value2)
+            document.writeln(result3)
+
+            // RegExp modifier
+            // gunakan g untuk mengecek kesesuaian pola dengan semua teks dalam global scope
+            // gunakan i untuk mengecek kesesuaian pola dengan semua teks dalam case sensitive
+            // gunakan m untuk mengecek kesesuaian pola dalam multiline
+
+            let regex6 = /Hello/g
+            let result4 = regex6.test(value2)
+            document.writeln(result4)
+
+            // RegExp method
+            // test(value): untuk mengecek kesesuaian pola
+            // exec(value): untuk eksekusi regex
+            // replace(value,replaceValue): untuk mengganti kesesuaian pola
+
+            
+
+
+        </script>
+    </body>
+</html>
