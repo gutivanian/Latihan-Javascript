@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>86. Symbol</title>
+    </head>
+    <body>
+        <script>
+            // Symbol adalah tipe data yang digaransi akan selalu uniq setiap kali dibuat
+            // Symbol banyak digunakan sebagai key pada object
+
+            let nama = Symbol()
+            let nama2 = Symbol()
+
+            let orang = {}
+            orang[nama] = "Nama saya"
+            orang[nama2] = "Gimbil"
+
+            console.log(orang)
+            console.log(orang[nama])
+
+
+            // Symbol.for
+            // jika ingin mendapatkankan symbol yang sudah ada
+            let nama3 = Symbol.for("Nama saya")
+            let nama4 = Symbol.for("Nama saya")
+console.log(nama3 === nama4)
+        </script>
+    </body>
+</html>
