@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>84. Map</title>
+    </head>
+    <body>
+        <script>
+            // Map merupakan representasi dari struktur data key(property name) dan value
+            // Map mirip dengan tipe data object, hanya saja pada Map, semua method untuk manipulasi data sudah disediakan
+            // Map mengikuti kontrak iterable, sehingga bisa diiterasi secara default
+
+            // perbedaan map dan object cek untitled.png
+
+                let map = new Map();
+                map.set("Nama", "Joko")
+                map.set("Keterangan", "Aktif")
+                console.log(map);
+                console.log(map.get("Keterangan"));
+
+                map.forEach((element,key) => {
+                   document.writeln(`${key} : ${element}`) 
+                });
+
+                document.writeln("<br>")
+                for (const isi of map) {
+                    document.writeln(`${isi[0]} : ${isi[1]}`);
+                }
+        </script>
+    </body>
+</html>
