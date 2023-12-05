@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>81. Date</title>
+    </head>
+    <body>
+        <script>
+            // Javascript memiliki tipe data untuk representasi waktu dan tanggal, yaitu Date
+            // Date merupakan representasi milisekon sejak 1 Januari 1970 
+
+            {
+                // Membuat object date dengan new Date()
+                let date = new Date()
+                console.log(date)
+
+                // membuat date dengan tanggal saja
+                console.log(new Date(2022,12,7))
+                // bisa dilanjutkan ke milisekon
+
+            }
+
+            {
+                // membuat dengan unix timestamp
+                let timestamp = Date.now()
+                console.log(timestamp)
+
+                let dateunix = new Date(timestamp)
+                console.log(dateunix)
+                // alternatif menggunakan getTime jika yang ingin diubah sudah ada tanggalnya
+                console.info(dateunix.getTime())
+            }
+
+
+            {
+                // Parsing Date dari string ke date
+                // gunakan string format YYYY-MM-DDTHH:mm:ss:sssZ
+                // setelah YYYY-MM-DD adalah opsional
+
+                let parseTimeStamp = Date.parse("2020-12-18T10:10:10.122+07:00")
+                console.info(parseTimeStamp)
+
+                let date = new Date(parseTimeStamp)
+                console.info(date)
+            }
+
+
+            {
+                // Date time get and set
+                let date = new Date()
+
+                console.info(date.getFullYear())
+                console.info(date.getMonth())
+                console.info(date.getDay())
+                console.info(date.getHours())
+                console.info(date.getMinutes())
+                console.info(date.getSeconds())
+                console.info(date.getMilliseconds())
+                console.info(date.getTimezoneOffset())
+            }
+        </script>
+    </body>
+</html>
