@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>80. BigInt</title>
+    </head>
+    <body>
+        <script>
+            // BigInt merupakan tipe data Number yang bisa mencakup data angka lebih dari Number.MAX_SAFE_INTEGER
+
+            let a = BigInt(Number.MAX_SAFE_INTEGER);
+            let b = BigInt(Number.MAX_SAFE_INTEGER);
+
+            let c = a+b
+            console.info(c)
+            console.info(typeof c === 'number')
+        </script>
+
+    </body>
+</html>
