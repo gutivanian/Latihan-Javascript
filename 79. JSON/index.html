@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>79. JSON</title>
+    </head>
+    <body>
+        <script>
+            // JSON adalah singkatan dari Javascript Object Notation
+            // JSOn adalah data string yang bentuknya mirip object
+            // JSON berguna untuk komunikasi server dan client
+
+            // JavaScript mendukung konversi data dari string JSON ke Object atau sebaliknya
+            // JSON.stringify() digunakan untuk mengonversi dari object ke string
+            // JSON.parse() berguna untuk melakukan konversi dari string ke object
+            {
+                // mengubah object ke JSON
+                const person = {
+                    firstName: "John",
+                    lastName: "Doe",
+                    address: {
+                        country: "USA",
+                        city: "New York"
+                    },
+                    hobbies: ["music", "sport"]
+                }
+
+                let json = JSON.stringify(person)
+                let personString = JSON.parse(json)
+                console.log(json)
+                console.log(personString)
+            }
+        </script>
+
+    </body>
+</html>
