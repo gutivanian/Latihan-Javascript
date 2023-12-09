@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>78. Object</title>
+    </head>
+    <body>
+        <script>
+            // Static method pada object
+            {
+                // Object freeze & seal 
+                // object freeze berguna untuk menonaktifkan object sehingga tidak bisa diubah atributnya
+                // object seal berguna untuk menonaktifkan object sehingga tidak bisa dihapus atributnya
+
+                let object = {
+                    name: "John",
+                    age: 30
+                }
+
+                Object.freeze(object)
+                object.name = "Daffa"
+                object.age = 20
+
+                document.writeln(object.age )
+                object.name = "Daffa"
+                delete object.age
+
+                document.writeln(object.age )
+
+            }
+            {
+                let object = {
+                    name: "John",
+                    age: 30
+                }
+
+                // object seal
+                Object.seal(object)
+                object.name = "Daffa"
+                delete object.age
+                document.writeln(object.name)
+                document.writeln(object.age)
+
+            }
+
+            {
+                // object assign
+                let object = {
+                    name: "John"
+                }
+let object2 = {
+                    name: "Daffa",
+                    age: 20
+                }
+                Object.assign(object,object2)
+                console.info(object)
+            
+            }
+
+            {
+                // Object property name dan value
+                let object = {
+                    name: "John",
+                    age: 30
+                }
+
+                document.writeln("<br>")
+                document.writeln(Object.values(object)  )
+                document.writeln("<br>")
+                document.writeln(Object.getOwnPropertyNames(object)) 
+            }
+
+        </script>
+
+    </body>
+</html>
