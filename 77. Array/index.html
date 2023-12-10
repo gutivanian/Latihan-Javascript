@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>77. Array</title>
+    </head>
+    <body>
+        <script>
+            // iterasi array dengan foreach
+
+            let array = [1,2,3,4,5,6,7,8,9,10]
+            array.forEach(function(element){
+                document.writeln(element)
+            })
+            document.writeln('<br>')
+            // iterasi array dengan for
+            for(let i = 0; i < array.length; i++){
+                document.writeln(array[i])
+            }
+            document.writeln('<br>')
+            // array foreach dengan arrow function
+            let a = [1,2,3,4,5,6,7,8,9,10]
+            a.forEach((element)=>{
+                document.writeln(element)
+            })
+            {
+                // array queue
+                let array = [1,2,3,4,5,6,7,8,9,10]
+                // push memberi data paling belakang
+                array.push(11)
+                document.writeln('<br>')
+                document.writeln(array)
+                // shift mengambil data dan menghapus paling depan
+                array.shift()
+                document.writeln('<br>')
+                document.writeln(array)
+            }
+
+            {
+                // array stack
+                let array = [1,2,3,4,5,6,7,8,9,10]
+                // unshift memberi data paling depan
+                array.unshift(11)
+                document.writeln('<br>')
+                document.writeln(array)
+                // pop mengambil data dan menghapus paling belakang
+                array.pop()
+                document.writeln('<br>')
+                document.writeln(array)
+            }
+
+            {
+                // array search
+                // array find
+                let array = [1,2,3,4,5,6,7,8,9,10]
+                document.writeln('<br>')
+                document.writeln(array.find((element)=>{
+                    
+                    return element > 5
+                }))
+                // array findIndex
+                document.writeln('<br>')
+                document.writeln(array.findIndex((element)=>{
+                    
+                    return element > 5
+                }))
+                // array includes
+                document.writeln('<br>')
+                document.writeln(array.includes(5))
+                // array indexof
+                document.writeln('<br>')
+                document.writeln(array.indexOf(5))
+
+                // array lastIndexOf berguna untuk mencari index terakhir
+                document.writeln('<br>')
+                document.writeln(array.lastIndexOf(5))
+            }
+
+            {
+                // array filter berguna untuk mencari data dengan kriteria yang diinginkan
+                let array = [1,2,3,4,5,6,7,8,9,10]
+                document.writeln('<br>')
+                document.writeln(array.filter((element)=>{
+                    return element > 5
+                }))
+
+                
+            }
+
+            {
+                // array transform
+                // array map mengembalikan array baru dengan perubahan data yang diinginkan 
+                let array = [1,2,3,4,5,6,7,8,9,10]
+                document.writeln('<br>')
+                document.writeln(array.map((element)=>{
+                    return element * 2
+                }))
+
+                // array reduce mengembalikan data yang diinginkan
+                document.writeln('<br>')
+                document.writeln(array.reduce((accumulator, currentValue)=>{
+                    return accumulator + currentValue
+                }))
+
+                // array reduceRight
+                document.writeln('<br>')
+                document.writeln(array.reduceRight((accumulator, currentValue)=>{
+                    return accumulator + currentValue
+                }))
+
+                
+            }
+        </script>
+    </body>
+</html>
