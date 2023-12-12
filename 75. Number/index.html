@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Number</title>
+    </head>
+    <body>
+        <script>
+            // Number adalah fungsi untuk mengkonversi ke tipe data number dari tipe data lain
+            // Jika tidak bisa dikonversi maka hasilnya akan NaN
+
+            let data = "123222"
+            let angka = Number(data)
+            document.writeln(angka)
+            document.writeln("<br>")
+            document.writeln(typeof angka)
+            let string = 'asdasda'
+            let angstring = Number(string)
+            document.writeln("<br>")
+            document.writeln(angstring)
+            document.writeln("<br>")
+            document.writeln(typeof angstring)
+
+            // number static properties untuk mendapat min/max
+            document.writeln("<br>")
+            document.writeln(Number.MAX_VALUE)
+            document.writeln("<br>")
+            document.writeln(Number.MIN_VALUE)
+            document.writeln("<br")
+
+            // static method number
+            document.writeln(Number.isFinite(Number.POSITIVE_INFINITY))
+            document.writeln("<br>")
+            document.writeln(Number.isInteger(100))
+            document.writeln("<br>")
+            document.writeln(Number.isNaN(angstring))
+
+            // instance method number
+            document.writeln("<br>")
+            document.writeln(data.toString(3 ))//isian 3 itu radix, cari dokum
+            document.writeln("<br>")
+            document.writeln(data.toLocaleString("id-ID"))//cari dokum
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
