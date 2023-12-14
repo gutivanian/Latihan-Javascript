@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>73. Class Error</title>
+    </head>
+    <body>
+        <script>
+            // membuat class error dengan inheritance class error bawaan
+            class ValidationError extends Error{
+                constructor(message, field){
+                    super(message);
+                    this.field = field
+                }
+            }
+
+            class MathUtil{
+                static sum(...nmbers){
+                    if(nmbers.length === 0){
+                        throw new ValidationError('Tidak ada angka yang dimasukkan', 'nmbers')
+                    }
+
+                    let result = 0
+                    for (const nm of nmbers){
+                        result += nm
+                }
+                return result
+            }}
+
+
+            try {
+                console.info(MathUtil.sum())
+            } catch (error) {
+                console.info(error.message +" pada field " + error.field)
+            }
+        </script>
+    </body>
+</html>
