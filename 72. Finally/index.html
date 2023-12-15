@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>71. Error Handling</title>
+    </head>
+    <body>
+        <script>
+            // Finally adalah proses yang ingin  dieksekusi ntah terjadi error atau tidak
+            // block finally akan dieksekusi setelah block catch selesai
+
+            class MathUtil {
+                
+                static sum(...angka){
+                    if(angka.length == 0){
+                        throw new Error("Tidak boleh kosong")
+                    }
+
+                    let total = 0
+                    for (let bil of angka){
+                        total += bil
+                    }
+                    return total
+                }
+            }
+
+
+            {try {
+                console.log(MathUtil.sum())
+                console.log("Try eksekusi")
+            } catch (error) {
+                console.log(`Terjadi error: ${error.message}`)
+                
+            } finally{
+                console.log("Ini dieksekusi terakhir dalam log")
+            }
+
+            // ini tetap eksekusi
+            console.log("Ini tetap eksekusi")}
+
+            {
+                // Try finally bisa digunakan tanpa menggunakan catch
+                class Counter{
+                    #counter = 0
+                    next(){
+                        // jika begini tidak akan mereturn counter yang telah ditambah
+                        // return this.#counter
+                        // counter++
+                        try{
+                            return this.#counter
+                        }
+                        finally{
+                            this.#counter++
+                        }
+                    }
+                }
+
+                const counter = new Counter()
+                counter.next()
+                counter.next()
+                counter.next()
+                counter.next()
+                counter.next()
+                counter.next()
+            }
+        </script>
+    </body>
+</html>
