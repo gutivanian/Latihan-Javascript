@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>71. Error Handling</title>
+    </head>
+    <body>
+        <script>
+            // ketika terjadi error, terkadang kita tidak ingin program terhenti
+            // Bisa menggunakan try catch untuk menangkap error
+            // pada block try, program akan mencoba mengakses kode yang error dan jika tidak berjalan, maka try akan berhenti dan mengeksekusi catch
+            // Jika tidak terjadi error, kode catch tidak akan dieksekusi
+
+            class MathUtil {
+                
+                static sum(...angka){
+                    if(angka.length == 0){
+                        throw new Error("Tidak boleh kosong")
+                    }
+
+                    let total = 0
+                    for (let bil of angka){
+                        total += bil
+                    }
+                    return total
+                }
+            }
+
+
+            try {
+                console.log(MathUtil.sum())
+                
+            } catch (error) {
+                console.log(`Terjadi error: ${error.message}`)
+                
+            }
+
+            // ini tetap eksekusi
+            console.log("Ini tetap eksekusi")
+        </script>
+    </body>
+</html>
