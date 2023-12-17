@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>70. Error</title>
+    </head>
+    <body>
+        <script>
+            // jeni2 class error di javascript:
+            // SyntaxError
+            // TypeError
+            // EvalError
+
+            // Kita bisa mentrigger sebuah error agar terjadi pada kode tertentu untuk melakukannya perlu mengguankan throw error
+
+            class MathUtil {
+                
+                static sum(...angka){
+                    if(angka.length == 0){
+                        throw new Error("Tidak boleh kosong")
+                    }
+
+                    let total = 0
+                    for (let bil of angka){
+                        total += bil
+                    }
+                    return total
+                }
+            }
+
+            console.info(MathUtil.sum()) 
+
+            let sum = MathUtil.sum(1,2,3,4,5,6)
+            console.info(sum)
+        </script>
+
+    </body>
+</html>
