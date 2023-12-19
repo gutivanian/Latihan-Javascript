@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>69. Static Class Field</title>
+    </head>
+    <body>
+        <script>
+            // static adalah kata kunci yg bisa ditambahkan sebelum field/method
+            // jika ditambah static, maka field/method
+            class MathUtil {
+                
+                static sum(...angka){
+                    let total = 0
+                    for (let bil of angka){
+                        total += bil
+                    }
+                    return total
+                }
+            }
+
+            let sum = MathUtil.sum(1,2,3,4,5,6)
+            console.info(sum)
+        </script>
+
+    </body>
+</html>
