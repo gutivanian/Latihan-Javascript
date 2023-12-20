@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>68. Operator Instanceof</title>
+    </head>
+    <body>
+        <script>
+            // kadang perlu untuk mengecek suatu objek apakah merupakan instance dari suatu class
+            // tidak bisa menggunakan typeof karena hasilnya akan object
+            // operator instanceof akan menghasilkan boolean, true jika benar object tersebut adalah instance objectnya
+
+            {class Employee{
+
+            }
+
+            class Manager{
+
+            }
+
+            let budi = new Employee();
+            let eko = new Manager();
+
+
+            console.log(typeof budi)
+            console.log(typeof eko)
+            console.log(budi instanceof Manager)
+            console.log(budi instanceof Employee)
+            console.log(eko instanceof Manager)
+            console.log(eko instanceof Employee)
+        }
+        {
+            // Jika inheritance, maka manager juga instance dari employee
+            {class Employee{
+
+            }
+
+            class Manager extends Employee{
+
+            }
+
+            let budi = new Employee();
+            let eko = new Manager();
+
+
+            console.log(typeof budi)
+            console.log(typeof eko)
+            console.log(budi instanceof Manager)
+            console.log(budi instanceof Employee)
+            console.log(eko instanceof Manager)
+            console.log(eko instanceof Employee)
+        }
+    }
+        </script>
+
+    </body>
+</html>
