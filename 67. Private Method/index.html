@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>67. Private Method</title>
+    </head>
+    <body>
+        <script>
+            // field private bisa digunakan # juga
+            class Person{
+
+                say(name){
+                    if (name){
+                        this.#sayWithName(name)
+                    } else {
+                        this.#sayWithoutName()
+                    }
+                }
+
+                #sayWithName(name){
+                    console.log(`hello ${name}`)
+                }
+
+                #sayWithoutName(){
+                    console.log(`hello`)
+                }
+            }
+
+
+            let bosse = new Person();
+            bosse.say("elu")
+            bosse.say()
+        </script>
+    </body>
+</html>
