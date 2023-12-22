@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>66. Private Class Field</title>
+    </head>
+    <body>
+        <script>
+            class Person {
+            // private field hanya dapat diakses di dalam class
+            // bisa menggunakan tanda # sebelum nama field
+            // counter ga bisa diubah secara langsung
+            #umur = 0
+
+            ultah(){
+                this.#umur++
+            }
+
+            mati(){
+                this.#umur--
+            }
+            
+            get(){
+                return this.#umur
+            }
+        }
+
+        let dapat = new Person();
+        dapat.ultah();
+        dapat.mati();
+        dapat.ultah()
+        document.writeln(dapat.get()) ;     
+        </script>
+
+    </body>
+</html>
