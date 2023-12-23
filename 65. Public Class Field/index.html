@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>65. Public Class Field</title>
+    </head>
+    <body>
+        <script>
+            // biasanya, jika ingin menambahkan field (properti yang berisi value), biasanya ditambah di konstruktor
+            // namun bisa juga menggunakan public class field yang ditempatkan diluar constructor
+            class Customer{
+                nama
+                umur = 0
+                alamat
+
+                // ubah field via constructor
+                constructor(nama,alamat, umur) {
+                    this.nama = nama;
+                    this.alamat = alamat;
+                    this.umur = umur;
+                    
+                }
+            }
+
+            let customer = new Customer("Ajeng","Jakarta",20)
+            console.info(customer)
+
+
+        </script>
+    </body>
+</html>
