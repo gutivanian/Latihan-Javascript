@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>64. Getter dan Setter</title>
+    </head>
+    <body>
+        <script>
+            class Person {
+                constructor(nama, umur) {
+                    this._nama = nama;
+                    this._umur = umur
+                }
+
+                get nama() { return this._nama; }
+                get umur() { return this._umur; }
+
+                set nama(n) { this._nama = n; }
+                set umur(um) { this._umur = um; }
+            }
+
+            let person = new Person("John", 30);
+            person.umur = 31;
+            document.writeln(person.umur)
+
+        </script>
+    </body>
+</html>
