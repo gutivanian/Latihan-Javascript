@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>62. Super Constructor</title>
+    </head>
+    <body>
+        <script>
+            // Selain digunakan untuk memanggil constructor milik parent class, kata kunci super dapat digunakan untuk mengakses method dalam parent class
+            // cara menggunakan adalah super.namaFungsi
+
+            class Employee {
+                constructor(name){
+                    this.name = name;
+                }
+                sayHello(nama_anda){
+                    document.writeln(`Halo ${nama_anda}, saya ${this.name} saya adalah Employee`)
+                    document.writeln("<br>")
+                }
+            }
+            class Manager extends Employee {
+
+                // menambah konstruktor
+                constructor(nama,umur)  {
+                    super(nama)
+                    this.umur = umur;
+                }
+                sayHello(nama_anda){
+                    document.writeln(`Halo ${nama_anda}, saya ${this.name} saya adalah Manager berumur ${this.umur}`)
+                    document.writeln("<br>")
+                    super.sayHello(nama_anda)
+                    document.writeln("<br>")
+                }
+            }
+
+            let Budi = new Employee("Budi")
+            Budi.sayHello("Kamu")
+
+            let Ojak = new Manager("Ojak" , 30)
+            Ojak.sayHello("Elu")
+
+
+        </script>
+    </body>
+</html>
