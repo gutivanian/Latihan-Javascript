@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>62. Super Constructor</title>
+    </head>
+    <body>
+        <script>
+            // Constructor inheritance hanyalah melakukan eksekusi constructor lain dengan tujuan agar properti di konstruktor lain bisa ditambahkan ke instance/class objek ini
+            // Jika ingin menghasilkan hasil yang sama, maka gunakan kata kunci super pada konstruktor
+            // kata kunci super berguna untuk memanggil constructor super class
+            // Jika di child class membuat constructor, maka wajib memanggil parent constructor meski di parent tidak ada constructor
+            class Employee {
+                constructor(name){
+                    this.name = name;
+                }
+                sayHello(nama_anda){
+                    document.writeln(`Halo ${nama_anda}, saya ${this.name} saya adalah Employee`)
+                    document.writeln("<br>")
+                }
+            }
+            class Manager extends Employee {
+
+                // menambah konstruktor
+                constructor(nama,umur)  {
+                    super(nama)
+                    this.umur = umur;
+                }
+                sayHello(nama_anda){
+                    document.writeln(`Halo ${nama_anda}, saya ${this.name} saya adalah Manager berumur ${this.umur}`)
+                    document.writeln("<br>")
+                }
+            }
+
+            let Budi = new Employee("Budi")
+            Budi.sayHello("Kamu")
+
+            let Ojak = new Manager("Ojak" , 30)
+            Ojak.sayHello("Elu")
+
+
+        </script>
+    </body>
+</html>
