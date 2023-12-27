@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>61. Class Inheritance</title>
+    </head>
+    <body>
+        <script>
+            // Dalam class, untuk melakukan inheritance bisa menggunakan kata kunci extends
+
+            class Employee{
+                constructor(name,age){
+                    this.name = name;
+                    this.age = age;
+                }
+                sayHello(nama_anda){
+                    document.writeln(`Hello ${nama_anda}, my name is ${this.name}, im Employee`);
+                    document.writeln(`<br>`)
+                }
+
+            }
+            class Manager extends Employee{
+                sayHello(nama_anda){
+                    document.writeln(`Hello ${nama_anda}, my name is ${this.name}, im Manager `);
+                    document.writeln(`<br>`)
+                }
+            }
+
+            let daffa = new Manager("Daffa",20)
+            daffa.sayHello("Saya")
+            let akmal = new Employee("Akmal",20)
+            akmal.sayHello("Saya")
+
+        </script>
+    </body>
+</html>
