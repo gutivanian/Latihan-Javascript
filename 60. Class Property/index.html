@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>60. Class Property</title>
+    </head>
+    <body>
+        <script>
+            class Manusia{
+                constructor(name,age){
+                    this.name = name;
+                    this.age = age;
+                }
+                // memberi metode/fungsi
+                sayHello(nama_anda){
+                    document.writeln(`Hello ${nama_anda} saya ${this.name}`)
+                }
+            }
+
+            let daffa = new Manusia("Daffa",20)
+            let akmal = new Manusia("Akmal",20)
+            console.table(daffa)
+            console.table(akmal)
+            daffa.sayHello(akmal.name)
+
+
+
+        </script>
+    </body>
+</html>
