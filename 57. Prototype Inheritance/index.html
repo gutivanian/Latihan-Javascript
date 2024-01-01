@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>57. Prototype Inheritance</title>
+    </head>
+    <body>
+        <script>
+            {
+                // Proses yang salah
+                function Employee(nama){
+                    this.nama = nama;
+                }
+                function Manager(nama){
+                    this.nama=nama
+                }
+
+                // Menyamakan prototype agar seakan2 inheritance
+                Manager.prototype = Employee.prototype
+                Manager.prototype.sayHello = function(name){
+                    document.writeln(`Hello ${name}! nama saya ${this.nama} saya adalah manager`)
+               }
+               Employee.prototype.sayHello = function(name){
+                    document.writeln(`Hello ${name}! nama saya ${this.nama} saya adalah Employee`)
+               }
+
+               let budi_emp = new Employee("Budi")
+               let budi_mng = new Manager("Budi")
+               budi_emp.sayHello("Saya")
+               budi_mng.sayHello("Saya")
+            //    hasilnya keduanya employee karena disamadengankan sehingga nilai terakhir digunakan berdua.
+        }
+
+        {
+            document.writeln('<br>')
+            document.writeln('<br>')
+            // Proses yang benar
+            function Employee(name){
+                this.name = name
+            }
+            function Manager(name){
+                this.name = name
+            }
+
+            // cara yang benar prototype dibuat dari objeck
+            Manager.prototype = Object.create(Employee.prototype)
+
+            Manager.prototype.sayHello = function(name){
+                    document.writeln(`Hello ${name}! nama saya ${this.name} saya adalah manager`)
+               }
+               Employee.prototype.sayHello = function(name){
+                    document.writeln(`Hello ${name}! nama saya ${this.name} saya adalah Employee`)
+               }
+
+            let budi_emp = new Employee("Budi")
+            let budi_mng = new Manager("Budi")
+            budi_emp.sayHello("Saya")
+            budi_mng.sayHello("Saya")
+
+
+        }
+        </script>
+    </body>
+</html>
