@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>55. Constructor Inheritance</title>
+    </head>
+    <body>
+        <script>
+            // inheritance adalah proses memanggil constructor lain dalam sebuah constructor
+
+            function Manusia(nama,umur){
+                this.name = nama
+                this.age = umur
+            }
+
+            // gunakan Konstruktor.call untuk memanggil konstruktor lain
+            function Karyawan(nama, umur, jabatan){
+                Manusia.call(this, nama, umur)
+                this.jabatan = jabatan
+            }
+
+            Bambang = new Manusia("Bambang",30)
+            Bambang_Boss = new Karyawan("Bambang",30,"Boss")
+            console.log(Bambang_Boss)
+
+
+
+        </script>
+    </body>
+</html>
