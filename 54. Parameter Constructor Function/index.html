@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>54. Parameter Constructor Function</title>
+    </head>
+    <body>
+        <script>
+            function Manusia(nama,umur){
+                this.nama = nama
+                this.umur = umur
+                this.sayHello = function(nama_anda){
+                    document.writeln(`Halo ${nama_anda}, saya ${this.nama}`)
+            }
+        }
+        let person1 = new Manusia("Budi", 30)
+        person1.sayHello("Kowe")
+
+
+
+        </script>
+    </body>
+</html>
