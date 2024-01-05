@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>53. Method Constructor Function</title>
+    </head>
+    <body>
+        <script>
+            {function Manusia(){
+                this.name = ""
+                this.age = 0
+                this.sayHello = function(name){
+                    document.writeln(`Hello ${name} saya ${this.name}`)
+                }
+            }
+
+            let daffa = new Manusia()
+            daffa.name = "Daffa"
+            daffa.age = 20
+            daffa.sayHello("Saya")
+            let akmal = new Manusia()
+            akmal.name = "Akmal"
+            akmal.age = 20
+            akmal.sayHello("Saya")
+            
+            }
+
+
+        </script>
+    </body>
+</html>
