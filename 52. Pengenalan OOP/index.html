@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> 52. Pengenalan OOP</title>
+    </head>
+    <body>
+        <script>
+            {
+                // membuat objek secara langsung
+                let Bambang = {
+                    name: "Bambang",
+                    age: 20,
+                }
+
+                let Joko = {
+                    name: "Joko",
+                    age: 20,
+                }
+
+                console.table(Bambang)
+                console.table(Joko)
+            }
+
+            {
+                // Membuat objek dengan Constructor Function
+                // membuat constructor function diawali huruf besar
+                function Manusia(){
+                    // gunakan this untuk memberikan properti
+                    this.name = ""
+                    this.age = 0
+                }
+
+                // membuat objek dari construktor dengan menggunakan new
+                let Bambang = new Manusia()
+                // gunakan objek.properti untuk mengganti
+                Bambang.name= "Bambang"
+                Bambang.age=20
+                console.table(Bambang)
+                let Joko = new Manusia()
+                Joko.name= "Joko"
+                Joko.age=100
+                console.table(Joko)
+            }
+
+
+
+
+
+        </script>
+
+    </body>
+</html>
