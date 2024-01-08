@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>50. Strict Mode</title>
+    </head>
+    <body>
+        <script>
+            /* Saat menjalankan kode JS, secara default tidak dijalankan mada mode strict, namun mode sloppy. Pada JS5, dikenalkan mode strict, dimana jika dijalankan akan adabeberapa perubahan:
+                * Mengubah jenis error
+                * Memperbaiki kesalahan engine
+                * Menolak beberapa kode perintah yang kedepannya akan digunakan di JS
+            Untuk menyalakan strict mode harus gunakan "use strict" pada baris awal file JS atau bisa diawal sebuah function
+            */
+
+            {
+                function testStrict(){
+                    'use strict'
+                    const person = {
+                        firstName = "Nama 1"
+                    }
+                    with (person) {
+                        document.writeln(firstname)
+                    }
+                }
+                testStrict()
+            }
+
+
+
+
+
+        </script>
+
+    </body>
+</html>
