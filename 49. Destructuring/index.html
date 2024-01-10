@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>49. Destructuring</title>
+    </head>
+    <body>
+        <script>
+            // Destructuring data dari array
+
+            let array = [1,2,3,4,5]
+            let [a,b,c,d,e] = array
+            document.writeln(a)
+            document.writeln(b)
+            document.writeln(c)
+            document.writeln(d)
+            document.writeln(e)
+
+            // Destructuring data dari object
+
+            let obj = {
+                nama : "Muhammad",
+                umur : 20
+            }
+
+            let {nama, umur} = obj
+            document.writeln(nama)
+            document.writeln(umur)
+
+
+            // gunakan spread operator ... untuk mengakses yang lain sebagai array baru
+
+            let array2 = [...array,6,7,8,9,10]
+            document.writeln(array2)
+
+
+            // destructuring nested object
+
+            let obj2 = {
+                name : "Muhammad",
+                age : 20,
+                address : {
+                    city : "Jakarta",
+                    country : "Indonesia"
+                }
+            }
+
+            let {name, age, address: {city, country}} = obj2
+            document.writeln(name)
+            document.writeln(age)
+            document.writeln(city)
+            document.writeln(country)
+
+            // default value destructuring jika tidak ada
+
+            {
+                const names = ["Nama Satu"]
+                const [nama1, nama2, nama3 = "Nama Default"] =names
+
+                document.writeln(nama1)
+                document.writeln(nama2)
+                document.writeln(nama3)
+            }
+
+            {
+                // mengganti nama properti dengan   variabel lain dalam objek
+                const objek = {
+                    name : "Muhammad",
+                    age : 20
+                }
+const {name: nama, age: umur} = objek
+                document.writeln(nama)
+                document.writeln(umur)
+
+            }
+
+
+
+        </script>
+
+    </body>
+</html>
