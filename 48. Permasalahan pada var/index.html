@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>48. Permasalahan pada var</title>
+    </head>
+    <body>
+        <script>
+            // permasalahan var adalah tidak memiliki block scope
+            
+            let i = 20
+            for (let i=0; i<10; i++) {
+                // i yang di print adalah local
+                document.writeln(`Local ${i}`)
+            }
+            // i yang di print adalah global 
+            document.writeln(`Global ${i}`)
+
+
+            // Jika menggunakan var
+            var j = 10
+            for (var j = 0; j<5 ; j++){
+                document.writeln(`Local ${j}`)
+            }
+
+            // nilainya tidak masuk akal
+            document.writeln(`Global ${j}`)
+
+        </script>
+
+    </body>
+</html>
