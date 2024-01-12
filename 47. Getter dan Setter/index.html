@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>47. Getter dan Setter</title>
+    </head>
+    <body>
+        <script>
+            // Getter dan setter adalah kemampuan membuat fungsi berbeda untuk mengambil data(getter)
+            // dan mengubah data (setter) pada sebuah properti pada objek
+
+            // Dengan menggunakan getter dan setter, kita bisa melakukan hal apapun dalam fungsi sebelum sebuah properti diakses atau diubah, misalkan menambah validasi atau yang lain
+
+            // getter
+            let person = {
+                name: "Aku",
+                age: "30",
+                get namaUmur(){
+                    return `${this.name} berumur ${this.age}`
+                }
+            }
+
+            document.writeln(person.namaUmur)
+            // ketika menggunakan get, maka namaUmur akan menjadi sebuah properti
+            // mengaksesnya bukan seperti function yang hars=us objek.fungsi(), tapi seperti properti tanpa ()
+
+            // setter
+            let orang = {
+                name: "Saya",
+                age: 36,
+
+                // masalah menggunakan perintah dibawah adalah jika nama/age diganti harus mengganti nilai dibawah juga
+                // namaAge: "Saya berumur 36"
+
+                // mengganti name dan age dapat dengan mengganti namaAgenya terlebih dahulu. Jika namaAge diubah nama dan age akan diekstrak dari namaAge
+                // gunakan setter
+                set namaAge(namaAgeBaru){
+                    let array = namaAgeBaru.split(" berumur ")
+                    this.name = array[0]
+                    this.age = array[1]
+                }
+            }
+
+            orang.namaAge="Doni berumur 22"
+            document.writeln(orang.name)
+            document.writeln(orang.age)
+
+            // a = "Doni berumur 22"
+            // array = a.split(" berumur ")
+            // document.writeln(array[0])
+            // document.writeln(array[1])
+
+        </script>
+
+    </body>
+</html>
