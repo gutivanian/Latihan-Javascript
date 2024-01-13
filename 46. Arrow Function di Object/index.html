@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>46. Arrow Function di Object</title>
+    </head>
+    <body>
+        <script>
+            // Arrow Function di Object
+            const person = {
+                name: 'John',
+                age: 30,
+                // kelemahan arrow function tidak bisa menggunakan generator dan this
+                sayHello: (name) => {document.writeln(`Hello ${name}`)}
+                            }
+
+            person.sayHello("aku")
+        </script>
+
+    </body>
+</html>
