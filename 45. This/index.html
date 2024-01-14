@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>45. This</title>
+    </head>
+    <body>
+        <script>
+            // this adalah referensi ke objek yang program itu dijalankan
+            // dalam objek method, fungsi this adalah referensi ke ojek pemilik fungsi itu
+            // jika this di global scope, maka this mengacu ke objek global
+
+            // contoh this di global scope akan menghasilkan object window yang merupakan browser itu
+            document.writeln(this)
+            // hal yang sama juga jika this dipanggil dalam fungsi pada global scope
+            function test(){
+                document.writeln(this)
+            }
+
+            test()
+
+            // this dalam nested function
+            function luar(){
+                function dalam(){
+                    document.writeln(this)
+                }
+                dalam()
+            }
+            luar()
+
+
+            // This dalam objek method
+            let objek = {
+                name: 'Nama',
+                metode: function (name){
+                    document.writeln(`nama kamu adalah ${name} dan berada pada ${this.name}`);
+                }
+            }
+            objek.metode("Saya")
+
+
+        </script>
+    </body>
+</html>
