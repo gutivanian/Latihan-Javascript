@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>44. Object Method</title>
+    </head>
+    <body>
+        <script>
+            // sebuah function dapat dijadikan properti dalam sebuah objek
+            // fungsi dalam objek disebut object method
+
+            let person = {
+                nama : "John",
+                umur : 30,
+                sayHello : function(nama){
+                    document.writeln(`Hallo nama saya ${nama}, saya berumur ${umur} tahun`);
+                }    
+            }
+
+            // menambahkan method ke objek
+            let objek = {
+                nama : "John",
+            }
+
+            objek.sayHello = function(nama){document.writeln(`Hallo nama saya ${nama}`)}
+            objek.sayHello("Anjing")
+
+
+
+        </script>
+    </body>
+</html>
