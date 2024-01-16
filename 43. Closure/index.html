@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>43. Closure</title>
+    </head>
+    <body>
+        <script>
+            // closure adalah kombinasi fungsi dan bundel referensi data disekitarnya
+            // closure dapat menjadikan fungsi dalam local scope agar dapat diakses di global scope
+
+            function createAdder(nilai){
+                let nama = "Nama"
+                function add(param){
+                    document.writeln(nama)
+                    return nilai+param
+                }
+                return add
+            }
+            // create adder 2 ini berarti 2 ditambah param yang akan jadi input
+            // addDua return 2+param
+            
+            addDua = createAdder(2)
+            
+
+        </script>
+
+    </body>
+</html>
