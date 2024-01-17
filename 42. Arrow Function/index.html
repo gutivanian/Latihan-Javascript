@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>42. Arrow Function</title>
+    </head>
+    <body>
+        <script>
+
+            let sayHello = (nama) => {
+                let say = `Hello ${nama} `
+                document.writeln(say)
+            }
+
+            sayHello("Saaaydas")
+
+            // arrow function tanpa input
+            let sayHello2 = () => {
+                let say = "Hello World"
+                document.writeln(say)
+            }
+
+            sayHello2()
+
+            // arrow function tanpa block
+            let sayHello3 = () => "Hello World"
+            document.writeln(sayHello3()) 
+
+            // arrow function return value
+            let sayHello4 = () => {
+                return "Hello World"
+            }
+            document.writeln(sayHello4())
+
+            // arrow function tanpa kurung input jika hanya ada satu input
+            let sayHello5 = name => `Hello ${name}`
+            document.writeln(sayHello5("Saaaydas"))
+
+            // arrow function sebagai callback
+            function Nama(callback) {
+                callback("Saya")
+            }
+
+            Nama(nama => document.writeln(`Hello ${nama}`))
+
+
+
+
+        </script>
+
+    </body>
+</html>
