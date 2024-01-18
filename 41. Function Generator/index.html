@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>41. Function Generator</title>
+    </head>
+    <body>
+        <script>
+            // function generator adalah fungsi yang digunakan untuk membuat data generator
+            // generator adalah data yang bisa diiterasi seperti Array
+            // untuk membuat function generator gunakan tanda * setelah kata fungsi
+            // untuk mengembalikan data gunakan kata kunci yield
+            // gampangnya mirip fungsi dengan return lebih dari 1
+            function* generatorFunction() {
+                yield 1
+                yield 2
+                yield 3
+            }
+
+            let banyakAngka = generatorFunction()
+            for (let angka of banyakAngka){
+                document.writeln(angka )
+            }
+            
+            // kompleks
+            function* angkaGanjil(maksimum){
+                for(let i=1; i<=maksimum; i++){
+                    if(i%2===1){
+                        yield i
+                    }
+                }
+            }
+
+            let AngkaGanjil = angkaGanjil(20)
+            for (const angka of AngkaGanjil) {
+                document.writeln(angka)
+            }
+
+
+
+
+        </script>
+
+    </body>
+</html>
