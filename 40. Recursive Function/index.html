@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>40. Recursive Function</title>
+    </head>
+    <body>
+        <script>
+            // recursive function adalah fungsi yang memanggil dirinya sendiri
+            // contoh adalah fungsi faktorial
+            function faktorial(angka){
+                let result = 1
+                for (let i = 1; 1<=angka; i++){
+                    result *= i
+                }
+                return result
+            }
+
+            document.writeln(faktorial(3))
+
+            // Faktorial dengan rekursif
+            function faktorialRekursive(angka){
+                if (angka === 1){
+                    return 1
+                }
+                else{
+                    return angka * faktorialRekursive(angka-1) //   
+                }
+            }
+
+            document.writeln(faktorialRekursive(3))
+
+
+
+        </script>
+    </body>
+</html>
