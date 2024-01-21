@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- d:/Dokumen/Latihan/JavaScript/39. Scope/index.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>39. Scope</title>
+    </head>
+    <body>
+        <script>
+            // local scope berada di dalam kurung kurawal {}
+
+            // global scope
+            let a = 10
+            {
+                // local scope
+                let a = 20
+                document.writeln(a)
+            }
+            document.writeln(a)
+        </script>
+    </body>
+</html>
