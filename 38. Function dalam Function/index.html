@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>38. Function dalam Function</title>
+    </head>
+    <body>
+        <script>
+            function luar(){
+                function dalam(){
+                    document.writeln('Ini dalam')
+                }
+                dalam()
+                document.writeln('Ini luar')
+                
+            }
+
+            luar()
+
+        </script>
+    </body>
+</html>
