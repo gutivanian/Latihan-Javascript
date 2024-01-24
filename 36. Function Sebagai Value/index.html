@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>36. Function Sebagai Value</title>
+    </head>
+    <body>
+        <script>
+            function hello() {
+                document.writeln("Hello World")
+            }
+            hello()
+
+            // function yang dapat dimasukka dalam variabel
+
+            let a = hello
+            a()
+
+            // function yang dapat dimasukka dalam array
+
+            let b = [hello]
+            b[0]()
+            
+
+
+        </script>
+    </body>
+</html>
