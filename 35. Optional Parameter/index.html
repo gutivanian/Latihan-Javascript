@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>35. Optional Parameter</title>
+    </head>
+    <body>
+        <script>
+            // Optional parameter adalah parameter yang tidak wajib diisi
+            // Jika kita tidak mengisi parameter tersebut, maka akan dianggap dengan nilai default yang
+            function sum(a, b, c = 0){
+                return a + b + c
+            }
+
+            // Rest parameter tersebut, maka akan dianggap dengan array
+            function sum2(a, b, ...c){
+                return a + b + c
+            }
+
+            document.writeln(sum(1, 2))
+            document.writeln(sum(1, 2, 3))
+            document.writeln(sum2(1, 2, 3, 4, 5, 6))
+
+            // rest parameter sebuah function dengan for
+
+            function sum3(a, b, ...c){
+                let total = 0
+                for (let i = 0; i < c.length; i++){
+                    total += c[i]
+                }
+                return a + b + total
+            }
+
+            // spread syntax dari fungsi sum3
+
+            document.writeln("<br>")
+            document.writeln(sum3(1, 2, 3, 4, 5, 6))    
+
+        </script>
+
+    </body>
+</html>
