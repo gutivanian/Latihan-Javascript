@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>34. Function</title>
+    </head>
+    <body>
+        <script>
+            
+            function myFunction(){
+                document.writeln("Hello World")
+            }
+
+            myFunction()
+
+            // function dengan input
+
+            function myFunction2(name){
+                document.writeln(`Hello ${name}`)
+            }
+
+            myFunction2("Daffa")
+
+            // function dengan return value
+
+            function myFunction3(name){
+                return `Hello ${name}`
+            }
+
+            document.writeln(myFunction3("Daffa"))
+
+            // fungsi dengan return dan loop
+
+            function myFunction4(){
+                let text = ""
+                for(let i = 0; i < 10; i++){
+                    text += i
+                }
+                return text
+            }
+
+            document.writeln(myFunction4())
+
+        </script>
+    </body>
+</html>
