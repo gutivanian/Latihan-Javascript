@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>33. With</title>
+    </head>
+    <body>
+        <script>
+            // with statement berguna untuk mengakses sebuah object
+            // dengan lebih mudah
+
+            let object = {
+                name: "John",
+                age: 30
+            }
+
+            with(object){
+                document.writeln(name)
+                document.writeln("<br>")
+                document.writeln(age)
+            }
+
+            
+        </script>
+    </body>
+</html>
