@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>23. Optional Chaining</title>
+    </head>
+    <body>
+        <script>
+
+            // Optional Chaining berguna untuk memanggil variabel yang ada di dalam object
+            // jika variabel tidak ada di dalam object maka akan mengembalikan undefined
+
+            let a = {
+                b: {
+                    c: 10
+                }
+            }
+
+            let b = a?.b?.c
+
+            document.writeln(b)
+
+            // contoh lain
+            let x = {}
+            // jika di print tidak menghasilkan apa-apa karena tidak ada dan akan di break
+            const z = x.y.z
+            document.writeln(z)
+
+            // cara pengecekan bisa gunakan if
+            if (x.y!== undefined || x.y !== null){
+                z - x.y.z
+            } 
+            // cara yang lebih sederhana
+            z = x?.y?.z
+            document.writeln(z)
+
+
+
+
+        </script>
+    </body>
+</html>
