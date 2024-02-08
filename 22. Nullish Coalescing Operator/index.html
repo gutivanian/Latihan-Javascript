@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>22. Nullish Coalescing Operator</title>
+    </head>
+
+    <body>
+        <script>
+
+            // Nullish Coalescing Operator ?? adalah operator pengecekan apakah ada data di dalam array
+            let a = null ?? "Hello World"
+            document.writeln(a)
+            document.writeln("<br>")
+            let b = [] ?? "Hello World"
+            document.writeln(b) 
+            // karena array kosong maka akan menghasilkan nilai dari kedua sisi
+            // berguna juga untuk undefined
+            let c = undefined ?? "Hello World"
+            document.writeln(c)
+
+        </script>
+    </body>
+
+
+
+</html>
