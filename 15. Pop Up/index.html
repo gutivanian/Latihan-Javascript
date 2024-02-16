@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- d:/Dokumen/Latihan/JavaScript/15. Pop Up/index.html -->
+<html>
+    <head>
+        <title>15. Pop Up</title>
+    </head>
+    <body>
+        <script>
+            // alert berguna utuk memprint sebuah pop up
+            alert("Hello World")
+
+            // prompt berguna utuk memprint sebuah pop up
+            prompt("Hello World")
+
+            // confirm berguna utuk memprint sebuah pop up
+            confirm("Hello World")
+
+            // menggabungkan semuanya agar lebih interaktif
+            // misalkan membiarkan user input nama konfirmasi lalu berikan alert nama
+            
+            const nama = prompt("Masukkan nama")
+            alert(`Halo ${nama}`)
+
+            // buat konfirmasi dengan confirm mau masuk atau tidak
+
+            const masuk = confirm("Mau masuk")
+            if(masuk){
+                alert("Anda masuk")
+            }else{
+                alert("Anda keluar")
+            }
+
+        </script>
+    </body>
+</html>
