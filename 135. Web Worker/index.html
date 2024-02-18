@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="buttonTask">click</button>
+    <script>
+        // Javascript adalah single thread, artinya walau proses yang dijalankan adalah async, tapi tetap dijalankan dalam thread yang sama
+        // Kemampuan satu thread mengelola beberapa pekerjaan disebut sebagai concurrent
+        // Kemampuan beberapa thread untuk menjalankan satu atau lebih pekerjaan disebut paralel
+        // Untuk membuat proses paralel bisa gunakan web worker
+
+        // satu thread (lama)
+        function slowLog(total){
+            for(let i=0; i<total; i++){
+                console.log(i);
+            }
+        }
+
+        document.getElementById("buttonTask").onclick=function(){
+            console.log("Start");
+            slowLog(100000)
+            console.log(end);
+        }
+
+        // WebWorker adalah kemampuan untuk menjalankan proses di Thread yang berbeda dibanding main thread
+        // Keuntungannya adalah jika ada proses lama, web tidak akan freeze karena proses dijalankan di thread yang berbeda dengan main thread (UI)
+
+        
+    </script>
+</body>
+</html>
