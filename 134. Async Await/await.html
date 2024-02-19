@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+            // Manual
+
+            // Promise<JSON Product>
+            function getProduct(){
+                const request = new Request("api/product.json",{
+                    method: "GET",
+                })
+
+                const response = fetch(request)
+                
+                return response.then((response) => response.json())
+            }
+
+            // Promise<String ProductName>
+            function getProductName(){
+                return new Promise(function(resolve, reject) {
+                    const product = getProduct()
+                        .then((product)=> resolve(product.name))
+                        .catch((error) => reject(error))
+                })
+            }
+
+            getProductName()
+                .then((productName) => console.log(productName))
+
+        }
+
+
+        {
+            // dengan await tanpa then/catch
+            function getProduct(){
+                const request = new Request("api/product.json",{
+                    method: "GET",
+                })
+
+                const response = fetch(request)
+                
+                return response.then((response) => response.json())
+            }
+
+            async function getProductName(){
+                try{
+                    const product = await getProduct()
+                    return product.name
+                }catch(e){
+                    return "Product not Found"
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Async await adalah fitur di JS untuk mempermudah pembuatan promise
+        // Dengan async await ktia bisa membuat kode async dengan gaya sync
+
+        // ---
+        // Async digunakan untuk menandakan bahwa sebuah function adalah async dan mengembalikan promise
+
+        // ---
+        // Membuat promise manual
+        {
+            function getNamePromise(){
+                return new Promise(function(resolve,reject){
+                    resolve("Nama")
+                })
+            }
+
+            getNamePromise().then(function(name){ console.log(name)});
+        }
+
+        // Membuat promise dengan async
+        {
+            async function getNameAsync(){
+                return "Nama"
+            }
+
+            getNameAsync().then(function(name){ console.log(name)});
+        }
+
+
+        // Await digunakan untuk mendapatkan value dari promise
+        // await hanya bisa digunakan dalam Async Function
+        
+    </script>
+</body>
+</html>
