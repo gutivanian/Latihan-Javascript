@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <label for="username">
+            <input type="text" name="username" id="username">
+        </label>
+        <br>
+        <label for="password">
+            <input type="password" name="password" id="password">
+        </label>
+        <br>
+        <input type="button" value="Login" id="login">
+    </form>
+    <script>
+        // Fetch API adalah fitur baru sebagai alternatif AJAX
+        // Saat menggunakan AJAX, kita perlu menggunakan callback untuk menerima response atau data dari server, sedangkan Fetch API sudah menggunakan promise, sehingga penggunaan Fetch API lebih mudah dibandingkan AJAX
+
+        // Saat kita akan mengirim request menggunakan Fetch API, kita perlu membuat object request
+        // Ini bisa lebih rapi dibanding AJAX
+        
+        // ---Request
+
+        function doLogin(){
+            const response = fetch("https://eouile74ultbgir.m.pipedream.net",{
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({
+                    username: document.getElementById("username").value,
+                    password: document.getElementById("password").value
+                })
+            })
+        }
+
+    </script>
+</body>
+</html>
