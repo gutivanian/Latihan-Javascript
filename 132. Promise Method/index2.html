@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td id = "id"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td id = "name"></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td id = "price"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // Promise memiliki tiga method yang bisa digunakan
+        // then() untuk mendapatkan atau mengubah data ketika promise sukses
+        // catch() untuk mendapatkan data error ketika promise gagal
+        // finally() akan dieksekusi jika promise berhasil atau gagal
+
+        function getProduct(product){
+            return new Promise(function(resolve, reject){
+                const ajax = new XMLHttpRequest();
+                ajax.open("GET",`./api/${product}.json`)
+                ajax.onload = function(){
+                    if (ajax.status == 200){
+                        resolve(ajax.responseText)
+                    }else{
+                        reject(
+                            "Error dengan error " + ajax.status
+                        )
+                    }
+  
+                }
+                ajax.send()
+            })
+        }
+
+
+        // menjalankan banyak promise
+        
+        const response = Promise.all(
+            [
+                getProduct("product1"),
+                getProduct("product2"),
+                getProduct("product3"),
+            ]
+        )
+
+        response.then((values) => console.info(values))
+        .catch((error)=>console.log(error));
+
+    </script>  
+</body>
+</html>

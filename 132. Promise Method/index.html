@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td id = "id"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td id = "name"></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td id = "price"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // Promise memiliki tiga method yang bisa digunakan
+        // then() untuk mendapatkan atau mengubah data ketika promise sukses
+        // catch() untuk mendapatkan data error ketika promise gagal
+        // finally() akan dieksekusi jika promise berhasil atau gagal
+
+        function getProduct(){
+            return new Promise(function(resolve, reject){
+                const ajax = new XMLHttpRequest();
+                ajax.open("GET","./api/products.json")
+                ajax.onload = function(){
+                    if (ajax.status == 200){
+                        resolve(ajax.responseText)
+                    }else{
+                        reject(
+                            "Error dengan error " + ajax.status
+                        )
+                    }
+  
+                }
+                ajax.send()
+            })
+        }
+
+        getProduct().then((response)=>{return JSON.parse(response)}).then((json)=>{
+            document.getElementById("id").textContent = json.id;
+            document.getElementById("name").textContent = json.name;
+            document.getElementById("price").textContent = json.price;
+        }).catch((error)=>{
+            document.getElementById("id").textContent = error;
+            document.getElementById("name").textContent = error;
+            document.getElementById("price").textContent = error;
+        }).finally(()=>{
+            console.log("Finally");
+        })
+    </script>  
+</body>
+</html>
