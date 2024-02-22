@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Promise adalah sebuah proxy untuk sebuah nilai di masa depan (future) yang belum diketahui saat pembuatan promise
+        // Biasanya promise digunakan sebagai proxy untuk proses Async
+
+        function getProduct(){
+            return new Promise((resolve, reject) => {
+               
+               const ajax = new XMLHttpRequest();
+               ajax.open("GET", "./api/product.json")
+               ajax.onload = ()=>{
+                   console.log(ajax.responseText);
+                   if(ajax.status === 200){
+                       resolve(ajax.responseText);
+                   }
+                   else{
+                       reject(`Error dengan responseText: ${ajax.status}`);
+                   }
+               }
+               ajax.send();
+           })
+        }
+
+        const promise =  new Promise((resolve, reject) => {
+               
+               const ajax = new XMLHttpRequest();
+               ajax.open("GET", "./api/product.json")
+               ajax.onload = ()=>{
+                   console.log(ajax.responseText);
+                   if(ajax.status === 200){
+                       resolve(ajax.responseText);
+                   }
+                   else{
+                       reject(`Error dengan responseText: ${ajax.status}`);
+                   }
+               }
+               ajax.send();
+           })
+        
+        console.log(promise);
+    </script>
+</body>
+</html>
