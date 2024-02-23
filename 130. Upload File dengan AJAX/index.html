@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <label for="username">
+            <input type="text" name="username" id="username">
+        </label>
+        <br>
+        <label for="password">
+            <input type="password" name="password" id="password">
+        </label>
+        <br>
+        <input type="file" name="profile" id="profile">
+        <br>
+        <input type="button" value="register" id="register">
+    </form>
+    <script>
+        // Selain menggunakan JSON,QueryParam, Form, kadang kita butuh mengirim file ke server
+        // Untuk mengirim file ke server kita perlu menggunakan object FormData lalu kita perlu menambahkan object File ke dalam FOrmData itu
+        
+        function doRegister(){
+            const ajax = new XMLHttpRequest();
+            ajax.open("POST", "https://eow4ob4uvgdn0g6.m.pipedream.net");
+            ajax.onload = function(){
+                console.log(ajax.responseText);
+            }
+
+            const form = new FormData()
+            form.append("username", document.getElementById("username").value)
+            form.append("password", document.getElementById("password").value)
+            form.append("profile", document.getElementById("profile").files.item(0))
+
+            ajax.send(form)
+
+        }
+
+        document.getElementById("register").addEventListener("click", doRegister)
+    </script>
+</body>
+</html>
