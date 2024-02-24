@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- d:/Dokumen/Latihan/JavaScript/13. Tipe Data Object/index.html -->
+<!DOCTYPE html>
+<!-- d:/Dokumen/Latihan/JavaScript/13. Tipe Data Object/index.html -->
+<html>
+    <head>
+        <title>13. Tipe Data Object</title>
+    </head>
+    <body>
+        <script>
+            
+            // Object
+            // Object adalah tipe data yang berisi kumpulan data
+
+            // Menggunakan kurung siku
+            let object = {
+                name: "John",
+                age: 30
+            }
+
+            document.writeln(object)
+
+            // Menggunakan index
+            // index dimulai dari 0
+            document.writeln("<br>")
+            document.writeln(object.name)
+            document.writeln("<br>")
+            document.writeln(object.age)
+            // dapat dilihat berupa tabel dalam konsol
+            console.table(object)
+
+
+            // menambah atau mengubah data
+            object.name = "Daffa"
+            object.age = 20
+            document.writeln("<br>")
+            document.writeln(object.name)
+            document.writeln("<br>")
+            document.writeln(object.age)
+
+            // delete data
+            delete object.name
+            document.writeln("<br>")
+            document.writeln(object.name)
+            document.writeln("<br>")
+            document.writeln(object.age)
+            console.table(object)
+
+            
+
+
+        </script>
+    </body>
+</html>
