@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form >
+        <label for="search">
+            <input type="text" name="search" id="search">
+        </label>
+        <br>
+        <input type="button" value="Search" id="login">
+    </form>
+
+        <script>
+            // Selain format JSON, kadang saat mengirim data menggunakan AJAX kita hanya mengirim dalam bentuk query parameter
+            // Pada kasus ini bisa saja mengubah url dengan mengambahkan Query parameter, namun ada cara yang lebih mudah, yaitu menggunakan URLSearchParam
+            // Kita bisa menggunakan object URLSearchParam sebelum membuat URL
+            // URLSearchParam ini biasanya digunakan untuk search
+
+           function doLoginManual(){
+            const ajax = new XMLHttpRequest();
+            const searchValue = document.getElementById("search").value
+            ajax.open("GET", `https://eow4ob4uvgdn0g6.m.pipedream.net?search=${searchValue}`);
+            ajax.onload = function(){
+                console.log(ajax.responseText);
+            }
+            // ajax.setRequestHeader("Content-Type", "application/JSON")
+
+            ajax.send()
+           }
+
+           function doLoginURLSearchParam(){
+            const ajax = new XMLHttpRequest();
+            const param = new URLSearchParams();
+            param.append("search", document.getElementById("search").value);
+
+            ajax.open("GET", `https://eow4ob4uvgdn0g6.m.pipedream.net?${param.toString()}`);
+
+
+            ajax.send()
+           }
+
+           document.getElementById("login").onclick = doLoginURLSearchParam
+
+        </script>
+</body>
+</html>
