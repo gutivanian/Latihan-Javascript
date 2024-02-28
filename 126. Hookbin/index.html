@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>126. Hookbin</title>
+    </head>
+    <body>
+        <form >
+            <label for="username">
+                <input type="text" name="username" id="username">
+            </label>
+            <br>
+            <label for="password">
+                <input type="password" name="password" id="password">
+            </label>
+            <br>
+            <input type="button" value="Login" id="login">
+        </form>
+
+        <h1 id="response">
+
+        </h1>
+        <script>
+            // Kita perlu bantuan server sebagai tujuan penerimaan data di AJAX
+            // Website gratis untuk menerima data ajax adalah hookbin
+            // Hookbin adalah aplikasi yang menerima request HTTP dan menyimpan datanya  
+
+            // cara mengirim data dengan AJAX adalah dengan metode send() diikuti oleh parameter data
+
+                
+            function doLogin(){
+                const ajax = new XMLHttpRequest();
+                ajax.open("POST", "https://eow4ob4uvgdn0g6.m.pipedream.net")
+                ajax.onload = function (){
+                    console.info(ajax.responseText)
+                    const response = document.getElementById("response")
+                    response.innerText = ajax.responseText;
+                }
+
+                ajax.setRequestHeader("Content-Type", "application/json")
+                ajax.send(JSON.stringify({
+                    username: document.getElementById("username").value,
+                    password: document.getElementById("password").value
+                }))
+            }
+
+            document.getElementById("login").onclick = doLogin
+        </script>
+    </body>
+</html>

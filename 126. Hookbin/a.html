@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+const headers = new Headers()
+headers.append("Content-Type", "application/json")
+
+const body = {
+  "test": "event"
+}
+
+const options = {
+  method: "POST",
+  headers,
+  mode: "cors",
+  body: JSON.stringify(body),
+}
+
+fetch("https://eok5gepgb04s0ha.m.pipedream.net", options)
+    </script>
+</body>
+</html>
