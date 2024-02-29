@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ajax</title>
+    </head>
+    <body>
+        <p id="response">
+
+        </p>
+        <p id="statechange">
+
+        </p>
+        <script>
+            // AJAX singkatan dari Asynchronous JavaScript And XML
+            // AJAX biasanya digunakan untuk mengambiil atau mengirim data ke URL lain
+            // Untuk membuat AJAX bisa gunakanclass XMLHttpRequest
+
+            let ajax = new XMLHttpRequest();
+            ajax.open('GET', './api/hello.json');
+            // ajax.send();
+
+            // tiap request AJAX dilakukan, biasanya karena ingin mendapat informasi response yang diberikan oleh server
+            // Kita tidak bisa mengambil langsung response dari AJAX karena proses AJAX adalah async sehingga perlu menunggu hingga proses async selesai
+            // Untuk mendapat informasi AJAX, perlu gunakan AJAX callbax yang akan dieksekusi setelah AJAX selesai
+            // Untuk mengambil data dari server, bisa gunakan property responseText
+
+            // Cara menerima data di AJAX dengan menggunakan addEventListener
+            ajax.addEventListener("load", function(){
+                // hasil dari ajax adalah sebuah tekx, sehingga perlu diubah menjadi json
+                let json = JSON.parse(ajax.responseText);
+                let response = document.getElementById("response");
+                response.textContent = json.response;
+                document.body.appendChild(response);
+            })
+            // ajax.send();
+
+                // AJAX adalah proses komunikasi client dengan server
+                // Dalam komunikasi client dengan server, kita tidak bisa selalu menganggap proses akan berjalan lancar
+                // Akan ada yang bisa mengganggu proses AJAX seperti koneksi bermasalah error tidak valid dll
+                // Server biasanya akan mengirimkan HTTP Status Code sesuai dengan jenis response 
+                // Untuk mengetahui status response dari server bisa gunakan property status
+                console.log(ajax.status);
+
+
+            // AJAX memiliki tahapan state, dimana kita bisa mendapatkan banyak sekali state di AJAX menggunakan property readyState
+            // property readyState mengembalikan sebuah integer yang merepresentasikan statenya
+            // Jika ingin mendengarkan perubahan yang terjadi pada state, bisa menggunakan event readystatechange
+
+            ajax.addEventListener('readystatechange', function(){
+              console.info(ajax.readyState)
+            })
+
+
+            ajax.send()
+        </script>
+    </body>
+</html>
