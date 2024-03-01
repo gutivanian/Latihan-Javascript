@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>124. Async</title>
+    </head>
+    <body>
+        <h1 id="header">Header Async</h1>
+        <script>
+            let setTime = ()=> {
+                let header = document.getElementById("header");
+                header.textContent = new Date().toString()
+
+                document.body.appendChild(header)
+            }
+
+            // akan berubah tiap 1000 ms
+            setInterval(setTime,1000)
+        </script>
+    </body>
+</html>
