@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>121. HTML Form Element</title>
+    </head>
+    <body>
+        <form name="commentForm">
+            <label for="comment">
+                Comment: <input type="text" name="comment" id="comment">
+            </label>
+            <br>
+            <label for="from">
+                From: <input type="text" name="from" id="from">
+            </label>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        <div id="commentList">
+
+        </div>
+        
+        <script>
+            // Form adalah salah satu element yang memiliki banyak fitur diluar dari DOM
+            // Ini karena penggunaan form lebih kompleks ketimbang elemen html lain
+            // Ada banyak sekali properti dan method dan event pada form
+            document.querySelector("form[name = commentForm]").onsubmit = function (event) {
+                event.preventDefault()
+                let commentList = document.getElementById("commentList");
+                let comment = document.getElementById("comment").value;
+                let from = document.getElementById("from").value;
+
+                let commentItem = document.createElement("p")
+                commentItem.textContent = `${comment} - ${from}`
+                commentList.appendChild(commentItem);
+
+                // document.querySelector("form[name = commentForm]").reset()
+                // Kita bisa mengakses form dengan formnamenya, misal document.forms[name]
+                // bahkan kita bisa mengakses input dengan namenya document.forms[name][inputName]
+                document.forms[commentForm].reset()
+            }
+       </script>
+    </body>
+</html>
