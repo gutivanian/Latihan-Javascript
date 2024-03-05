@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>120. HTML Element</title>
+    </head>
+    <body>
+        <a id="link"></a>
+        <script>
+            // Element merupakan representasi dalam DOM
+            // Namun saat menggunakan HTML, iimplementasi detail  sebenarnya adalah HTML Element yaitu turunan dari element
+            // Kebanyakan HTML Element mememiliki property yang sesuai dengan attribute yang ada pada tag HTML, sehingga ga perlu gunakan setAttribute atau getAttribute
+
+            let link = document.getElementById("link")
+            link.href = "https://www.google.com"
+            link.target = "_blank"
+            link.textContent = "sadasdasdsad"
+
+
+        </script>
+    </body>
+</html>
