@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- d:/Dokumen/Latihan/JavaScript/12. Array/index.html -->
+<html>
+    <head>
+        <title>12. Array</title>
+    </head>
+    <body>
+        <script>
+            // Array
+            // Array adalah sebuah variabel yang berisi kumpulan data
+
+            // Menggunakan kurung siku
+            let array = [1,2,3,4,5,6,7,8,9,10]
+
+            document.writeln(array)
+
+            // Menggunakan index
+            // index dimulai dari 0
+            document.writeln("<br>")
+            document.writeln(array[0])
+            document.writeln("<br>")
+            document.writeln(array[1])
+            document.writeln("<br>")
+            document.writeln(array[2])
+            document.writeln("<br>")
+            document.writeln(array[3])
+            document.writeln("<br>")
+            document.writeln(array[4])
+            document.writeln("<br>")
+            document.writeln(array[5])
+            document.writeln("<br>")
+            document.writeln(array[6])
+            document.writeln("<br>")
+            document.writeln(array[7])
+            document.writeln("<br>")
+            document.writeln(array[8])
+            document.writeln("<br>")
+            document.writeln(array[9])
+            document.writeln("<br>")
+
+            // melihat di konsol dengan console.table
+            console.table(array)
+
+
+            // Operasi data di array
+
+            // push untuk menambahkan data di akhir array
+            array.push(11)
+            console.table(array)
+
+            // length untuk mengecek panjang array
+            document.writeln("<br>")
+            document.writeln(array.length)
+
+            // mengubah data di index tertentu
+            array[0]=100
+            console.table(array)
+            
+            // delete untuk menghapus data
+            delete array[1]
+            console.table(array)
+            // delete tidak menggeser index bisa dicek length nya
+
+            // Dalam array tidak harus bertipe data sama
+            array.push("satu")
+            console.table(array)
+
+            
+
+
+
+        </script>
+    </body>
+</html>
