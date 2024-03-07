@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>119. Node Type</title>
+    </head>
+    <body>
+        Ini adalah String
+        <!-- asdjasdjapsopo21poi12op3i2 -->
+        <script>
+            // Saat kita menseleksi sebuah node, maka akan menjadi nodelist, dan kadang perlu mengetahui tipe nodenya
+            // apakah element, textelement atau yang lain
+            // Node memiliki properti bernama nodeType untuk melihatnya
+
+            // nodeType memiliki nilai integer
+            // data masing-masing node bisa dilihat di ./img/nodeType
+            let nodes = document.body.childNodes;
+            
+            nodes.forEach((node) => {
+                console.log(node.nodeType)
+            })
+        
+        </script>
+    </body>
+</html>
