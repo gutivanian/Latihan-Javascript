@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>118. Query Selector</title>
+    </head>
+    <body>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis omnis nulla inventore ea laudantium itaque enim dignissimos quam ad ratione rem consectetur id, velit corporis iure! Velit repellendus a obcaecati.
+        </p>
+
+        <ul>
+            <li>sa</li>
+            <li>asd</li>
+            <li>2</li>
+            <li>asd</li>
+            <li>adas</li>
+        </ul>
+
+        <ol>
+            <li>as</li>
+            <li>adas</li>
+        </ol>
+
+        <div class="kelas">
+            asdasdasdsaasd
+        </div>
+        <script>
+            // QuerySelector merupakan method untuk menyeleksi node sesuai dengan pola yang ingin dicari
+
+            // Query selector mirip engan CSS, misal * untuk semua
+
+            {
+                // universal selector
+                let us = document.querySelectorAll("*")
+                console.log(us)
+            }
+
+            {
+                // Type selector
+                let tsli = document.querySelectorAll("li")
+                console.log(tsli)
+            }
+
+            {
+                // Class selector
+                let csss = document.querySelectorAll(".kelas")
+                console.log(csss)
+            }
+        </script>
+    </body>
+</html>
