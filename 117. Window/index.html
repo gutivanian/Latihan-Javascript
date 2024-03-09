@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>117. Window</title>
+    </head>
+    <body>
+        <p id="content">
+
+        </p>
+        <p id="loka"></p>
+
+        <script>
+            // Window adalah representasi window yang berisikan DOM document
+            // Beberapa JS object adalah objek dari window, seperti alert(), confirm() dan prompt() [sebenarnya adalah window.alert()]
+            // Untuk menggunakan window, tidak perlu menggunakan objeknya, hanya gunakan kata kunci window
+
+            // gunakan window untuk mengetahui ukuran layar
+            let content =  document.getElementById("content")
+            let loka = document.getElementById("loka")
+            let height = window.screen.height
+            let width = window.screen.width
+            // lihat lokasi url
+            let url = window.location
+
+            content.textContent = `Ukuran layar ${height} x ${width}`
+            loka.textContent =  url
+        </script>
+    </body>
+</html>
