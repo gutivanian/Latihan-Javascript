@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>116. InnerText dan InnerHTML</title>
+    </head>
+    <body>
+       <p id="content">
+        <script>
+            console.info("Hello World")
+        </script>
+        <b>Nama</b> Saya <i>Adalah</i>
+       </p>
+
+       <div id="isi">
+
+       </div>
+       <script>
+            // selain textContext terdapat property lain bernama innerText untuk mendapat isi teks sebuah elemen
+            // textContent akan mengembalikan semua isi dari konten text sebuah elemen
+            // innerText bisa tahu bagian mana teks yang mau ditampilkan dan tidak akan menampilkan hal seperti script, dll
+            {let content = document.getElementById("content");
+            console.log(content.textContent);
+            console.log(content.innerText );
+       }
+
+            {
+                // InnerHTML akan mengembalikan semua isi dari elemen
+                let content = document.getElementById("content");
+                console.log(content.innerHTML);
+
+                // Salah satu kemampuan innerHTML adalah kita bisa mengubah isi dari children sebuah elemen hanya  dengan string
+                // Tag yang terdapat di dalam String secara otomatis akan menjadi child element
+            }
+
+            {
+                let konten = document.getElementById('isi');
+                konten.innerHTML = '<h1>Ini Heading</h1>';
+            }
+
+        </script>
+    </body>
+</html>
