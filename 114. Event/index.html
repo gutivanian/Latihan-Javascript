@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>114. Event</title>
+    </head>
+    <body>
+        <h1 id="text">Click yello box</h1>
+        <div id="canvas"
+        style="
+        width: 500px;
+        height: 500px;
+        background-color: yellow;
+        "
+        ></div>
+        <script>
+
+            // DOM sendiri memiliki banyak sekali jenis event, tidak hanya di click
+            let canvas = document.getElementById("canvas");
+            let textarea = document.getElementById("text");
+
+            canvas.onclick = function(event) {
+                text.textContent = `You click at (${event.x}, ${event.y})`
+            }
+        </script>
+    </body>
+</html>
