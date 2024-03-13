@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>113. Event Handler</title>
+    </head>
+    <body>
+        <input type="button" id="clickMe" value="click me">
+        <script>
+            // Node memiliki kemampuan untuk berinteraksi dengan kejadian tertentu, misal klik, mouse, dll
+            // Runutan kejadian ini disebut event handler
+            // Ada dua jenis: Event Target atau Global Event Handler
+
+            // Event target merupakan parent class dari Node
+            // pada Event target bisa menggunakan method addEventListener(type, callback) untuk menambahkan EventHandler
+
+            {
+                let clickMe = document.getElementById('clickMe');
+                clickMe.onclick = function() {
+                    clickMe.setAttribute("value", "You Already Click Me")
+                    console.log("Button di Click");
+                }
+            }
+        </script>
+    </body>
+</html>
