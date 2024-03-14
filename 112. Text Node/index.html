@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>112. Text Node</title>
+    </head>
+    <body>
+        Ini tulisan
+        <script>
+            {// di halaman web, text tanpa tag bukan merupakan elemen, melainkan node lebih tepatnya text node
+            let textnod = document.body.firstChild
+            console.log(textnod.wholeText);
+            }
+
+            {
+                // Membuat text node
+                let text = document.createTextNode("Nama Saya Bosse")
+                document.body.appendChild(text)
+            }
+        </script>
+    </body>
+</html>
