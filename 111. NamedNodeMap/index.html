@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>111. NamedNodeMap</title>
+    </head>
+    <body>
+        <img src="./img/Rhinedottir_tea_cup.jpg" alt="" id="logo">
+        <script>
+            {// NamedNodeMap adalah kumpulan dari attr
+            // mirip dengan NodeList, namun isinya adalah attr
+            let logo = document.getElementById("logo");
+            let attr = logo.attributes
+
+            for (const attribute of attr) {
+                console.info(`${attribute.name} ${attribute.value}`)
+            }
+            }
+        </script>
+    </body>
+</html>
