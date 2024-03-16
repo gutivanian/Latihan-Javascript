@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>110. Attr</title>
+    </head>
+    <body>
+        <img src="./img/Rhinedottir_tea_cup.jpg" id="logo">
+        <br>
+        <img src="" id="logo2">
+        <script>
+
+            {// Attr atau attribute adalah representasi dari atribut sebuah element, atau singkatnya key-value
+                let logo = document.getElementById('logo')
+            let src = logo.getAttributeNode('src')
+
+            console.log(src.name)
+            console.log(src.value)}
+
+            {
+                // Kadang-kadang ingin langsung mendapat attribute, bisa gunakan getAttribute
+                let logo = document.getElementById('logo')
+                let src = logo.getAttribute('src')
+                console.log(src)
+            }
+
+            {
+                // Menambah attribute baru
+                // gunakan document.createAttribute
+                // untuk menambahkan ke elemen gunakan element.setAttributeNode(attr)
+                // atau element.setAttribute(name,value)
+
+                let logo2 = document.getElementById("logo2");
+                let src = document.createAttribute("src");
+
+                src.value = " ./img/Rhinedottir_tea_cup.jpg";
+                logo.setAttributeNode(src);
+            }
+        </script>
+    </body>
+</html>
