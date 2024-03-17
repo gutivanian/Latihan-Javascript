@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- d:/Dokumen/Latihan/JavaScript/11. Konversi String dan Number/index.html -->
+<html>
+    <head>
+        <title>11. Konversi String dan Number</title>
+    </head>
+    <body>
+        <script>
+            var a = 100
+            var b = "100"
+
+            document.writeln(a + "<br>")
+            document.writeln(b)
+
+            // Gunakan typeof untuk mengecek tipe data
+            document.writeln(typeof a + "<br>")
+            document.writeln(typeof b)
+
+            // gunakan parseInt untuk konversi string ke number
+            var c = parseInt(b)
+            document.writeln(c + "<br>")
+            document.writeln(typeof c)
+
+            // gunakan parseFloat untuk konversi string ke number dengan floating point/koma
+            var d = parseFloat(b)
+            document.writeln(d + "<br>")
+            document.writeln(typeof d)
+
+            // gunakan Number() untuk konversi string ke number tanpa memedulikan int/float
+            var e = Number(b)
+            document.writeln(e + "<br>")
+            document.writeln(typeof e)
+
+            // gunakan .toString() untuk konversi number ke string
+            var f = 100
+            var g = f.toString()
+            document.writeln(g + "<br>")
+            document.writeln(typeof g)
+
+            // NaN = Not a Number
+            var h = "Hello"
+            var i = Number(h)
+            document.writeln(i + "<br>")
+            document.writeln(typeof i)
+
+            // jika angka diikuti string
+            var j = "100Hello"
+            var k = Number(j)
+            document.writeln(k + "<br>")
+            document.writeln(typeof k)
+
+            // isNaN() = check angka tidak ada
+            var l = "Hello"
+            var m = isNaN(l)
+            document.writeln(m + "<br>")
+            document.writeln(typeof m)
+
+            
+
+        </script>
+    </body>
+</html>
