@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>109. NodeList</title>
+    </head>
+    <body>
+        <ul id="menu1">
+            <li id="satu">Satu</li>
+            <li id="dua">Dua</li>
+            <li id="tiga">Tiga</li>
+        </ul>
+
+        <ul id="menu2">
+            <li>Nama</li>
+            <li>Saya</li>
+            <li>Anda</li>
+        </ul>
+        <script>
+            // NodeList adalah kumpulan dari node
+            // Biasanya nodelist digunakan ketika menyeleksi banyak node sekaligus
+
+            let list = document.querySelectorAll("li")
+            console.info("list")
+
+            let list1 = document.getElementById("menu1").childNodes
+            console.info("list1")
+
+            let list2 = document.getElementById("menu2").childNodes
+            console.info("list2")
+
+
+            {
+                // Live dan Static NodeList
+                // NodeList memiliki 2 tipe, live dan static
+                // Live berarti jika perubahan yang terjadi pada NodeList, maka akan mengubah semua NodeListnya
+                // Static berarti sebaliknya
+
+                // childNodes adalah salah satu yang live
+                // contoh static adalah queryselector
+            }
+        </script>
+    </body>
+</html>
