@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>108. Element</title>
+    </head>
+    <body>
+        <h1 id="title">
+
+        </h1>
+        <p id="description">
+
+        </p>
+        <div id="cont"></div>
+        <script>
+            // Element adalah elemen HTML seperti html, head, body, div, h1, li dll
+            let title = document.getElementById("title");
+            let description = document.getElementById("description");
+            let content = document.getElementById("cont")
+
+            title.textContent = "Ini judul"
+            description.textContent = "lorem"
+
+            {
+                // membuat element
+                let subjud = document.createElement("h2")
+                subjud.textContent = "Sub Judul"
+                content.appendChild(subjud)
+            }
+        </script>
+    </body>
+</html>
