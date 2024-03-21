@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>107. Node</title>
+    </head>
+    <body>
+        <ul id="menu">
+            <li id="item1">Satu</li>
+            <li id="item2">Dua</li>
+            <li id="item3">Tiga</li>
+        </ul>
+        <script>
+            // Node adalah base class dari document, element dan attr
+            let menu = document.getElementById("menu")
+            console.log(menu)
+
+            let dua = document.getElementById("item2")
+            console.log(dua)
+
+            {
+                // Node properrty
+                console.log(menu.children)
+            }
+
+            {
+                // Node method
+                menu.removeChild(document.getElementById("item1"));
+            }
+        </script>
+    </body>
+</html>
