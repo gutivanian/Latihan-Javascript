@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>104. Dynamic Module Loading</title>
+    </head>
+    <body>
+        <script type="module" >
+            // dengan menggunakan impor, maka semua modul akan di load
+            // pada kenyataanya, kadang kita tidak ingin meload semua modul di awal, hanya meload modul yang dibutuhkan saja.
+            // Untuk melakukannya bisa menggunakan function import()
+            import('./hello.js').then(function (module) {
+                module.sayHello("bye")
+            })
+        </script>
+    </body>
+</html>
