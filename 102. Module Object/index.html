@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>102. Module Object</title>
+    </head>
+    <body>
+        <script type="module">
+            // Ketika modul berisikan banyak sekali export data, maka mengimpor satu persatu akan sangat sulit
+            // Maka akan ada alternatif untuk menggunakan module object
+            // Module object adalah object JS yang berisi atribut hasil yang dieksport pada modul
+            // Cara membuat module object adalah import * as NamaModule from "./module.js"
+            // Selanjutnya NamaModule dapat diangap sebagai object
+            import * as sekrip from "./scripts/scripts.js"   
+
+            console.log(sekrip.nama)
+            
+            </script>
+    </body>
+</html>
