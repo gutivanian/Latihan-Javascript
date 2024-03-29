@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- d:/Dokumen/Latihan/JavaScript/10. String Template/index.html -->
+<html>
+    <head>
+        <title>10. String Template</title>
+    </head>
+    <body>
+        <script>
+            // String Template
+            let name = "Daffa";
+            let age = 20;
+            let address = "Jakarta";
+            document.writeln("Name: " + name + "<br>")
+            document.writeln("Age: " + age + "<br>")
+            document.writeln("Address: " + address + "<br>")
+            // String Template gunakan backtick ``
+            document.writeln(`Name: ${name} <br>`)
+            document.writeln(`Age: ${age} <br>`)
+            document.writeln(`Address: ${address} <br>`)
+            
+            // Multiline string dengan string template/backtick
+            document.writeln(`
+                Name: ${name}   <br>
+                Age: ${age}     <br>
+                Address: ${address}
+            `)
+        </script>
+    </body>
+</html>
